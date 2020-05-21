@@ -67,18 +67,21 @@
           </li>
         </ul>
         <form class="form-inline my-2 my-lg-0">
-          <p style="color: white; padding: 10px;" class="my-auto">
-            <%= user.username %>
-          </p>
-          <a href="/logout" class="btn btn-warning my-2 my-sm-0">
-            Logout
-          </a>
+          <input
+            class="form-control mr-sm-2"
+            type="search"
+            placeholder="Search"
+            aria-label="Search"
+          />
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
+            Search
+          </button>
         </form>
       </div>
     </nav>
-    <h1>Post Route</h1>
+    <h1>Update user</h1>
     <div class="container">
-      <form action="/test" method="POST">
+      <form action="/update/<%= data._id %> " method="POST">
         <div class="form-group">
           <label for="exampleInputEmail1">Name</label>
           <input
@@ -86,7 +89,7 @@
             class="form-control"
             id="exampleInputEmail1"
             aria-describedby="emailHelp"
-            placeholder="Your name"
+            value="<%= data.name %>"
             name="name"
           />
           <small id="emailHelp" class="form-text text-muted"
@@ -99,26 +102,12 @@
             type="text"
             class="form-control"
             id="exampleInputPassword1"
-            placeholder="Your team"
+            value="<%= data.team %>"
             name="team"
           />
         </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="submit" class="btn btn-primary">Update</button>
       </form>
-    </div>
-
-    <div>
-      <h1>Register users</h1>
-      <% users.forEach((user) => { %>
-      <div class="card" style="width: 18rem;">
-        <div class="card-body">
-          <h5 class="card-title"><%= user.name %></h5>
-          <p class="card-text"><%= user.team%></p>
-          <a href="/update/<%= user._id%>" class="btn btn-primary">Update</a>
-          <a href="/delete/<%= user._id%>" class="btn btn-danger">Delete</a>
-        </div>
-      </div>
-      <% }) %>
     </div>
 
     <!-- Optional JavaScript -->

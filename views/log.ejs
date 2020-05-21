@@ -67,58 +67,77 @@
           </li>
         </ul>
         <form class="form-inline my-2 my-lg-0">
-          <p style="color: white; padding: 10px;" class="my-auto">
-            <%= user.username %>
-          </p>
-          <a href="/logout" class="btn btn-warning my-2 my-sm-0">
-            Logout
-          </a>
+          <input
+            class="form-control mr-sm-2"
+            type="search"
+            placeholder="Search"
+            aria-label="Search"
+          />
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
+            Search
+          </button>
         </form>
       </div>
     </nav>
-    <h1>Post Route</h1>
+    <h1>Register</h1>
     <div class="container">
-      <form action="/test" method="POST">
+      <form action="/register" method="POST">
         <div class="form-group">
-          <label for="exampleInputEmail1">Name</label>
+          <label for="exampleInputEmail1">UserName</label>
           <input
             type="text"
             class="form-control"
             id="exampleInputEmail1"
             aria-describedby="emailHelp"
             placeholder="Your name"
-            name="name"
+            name="username"
           />
           <small id="emailHelp" class="form-text text-muted"
             >We'll never share your email with anyone else.</small
           >
         </div>
         <div class="form-group">
-          <label for="exampleInputPassword1">Team</label>
+          <label for="exampleInputPassword1">Password</label>
           <input
-            type="text"
+            type="password"
             class="form-control"
             id="exampleInputPassword1"
             placeholder="Your team"
-            name="team"
+            name="password"
           />
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
       </form>
     </div>
-
-    <div>
-      <h1>Register users</h1>
-      <% users.forEach((user) => { %>
-      <div class="card" style="width: 18rem;">
-        <div class="card-body">
-          <h5 class="card-title"><%= user.name %></h5>
-          <p class="card-text"><%= user.team%></p>
-          <a href="/update/<%= user._id%>" class="btn btn-primary">Update</a>
-          <a href="/delete/<%= user._id%>" class="btn btn-danger">Delete</a>
+    <h1>Login</h1>
+    <div class="container">
+      <form action="/login" method="POST">
+        <div class="form-group">
+          <label for="exampleInputEmail1">UserName</label>
+          <input
+            type="text"
+            class="form-control"
+            id="exampleInputEmail1"
+            aria-describedby="emailHelp"
+            placeholder="Your name"
+            name="username"
+          />
+          <small id="emailHelp" class="form-text text-muted"
+            >We'll never share your email with anyone else.</small
+          >
         </div>
-      </div>
-      <% }) %>
+        <div class="form-group">
+          <label for="exampleInputPassword1">Password</label>
+          <input
+            type="password"
+            class="form-control"
+            id="exampleInputPassword1"
+            placeholder="Your team"
+            name="password"
+          />
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
     </div>
 
     <!-- Optional JavaScript -->
