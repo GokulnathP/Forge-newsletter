@@ -83,31 +83,38 @@
     <div class="container">
       <form action="/test" method="POST">
         <div class="form-group">
-          <label for="exampleInputEmail1">Email address</label>
+          <label for="exampleInputEmail1">Name</label>
           <input
-            type="email"
+            type="text"
             class="form-control"
             id="exampleInputEmail1"
             aria-describedby="emailHelp"
-            placeholder="Enter email"
-            name="email"
+            placeholder="Your name"
+            name="name"
           />
           <small id="emailHelp" class="form-text text-muted"
             >We'll never share your email with anyone else.</small
           >
         </div>
         <div class="form-group">
-          <label for="exampleInputPassword1">Password</label>
+          <label for="exampleInputPassword1">Team</label>
           <input
-            type="password"
+            type="text"
             class="form-control"
             id="exampleInputPassword1"
-            placeholder="Password"
-            name="password"
+            placeholder="Your team"
+            name="team"
           />
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
       </form>
+    </div>
+    <div>
+      <h1>Register users</h1>
+      <% users.forEach((user) => { %>
+      <p>Name: <%= user.name %></p>
+      <p>Team: <%= user.team%></p>
+      <% }) %>
     </div>
 
     <!-- Optional JavaScript -->
